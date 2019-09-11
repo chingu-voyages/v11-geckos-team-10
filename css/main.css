@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
-* {
-  color: pink;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+body ul {
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
