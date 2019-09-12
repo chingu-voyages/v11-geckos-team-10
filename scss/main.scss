@@ -9,32 +9,68 @@
 
  //fonts
  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
  //Global styles
- body{
+ body {
      margin: 0;
-     padding:0;
-     background-color:#fff;
-     font-family: 'Montserrat' , sans-serif;
+     padding: 0;
+     background-color: #fff;
+     font-family: 'Montserrat', sans-serif;
      box-sizing: border-box;
-     color:$second;
-     a{
+     color: $second;
+
+     a {
          text-decoration: none;
          color: inherit;
      }
-     ul{
-         margin:0;
+
+     ul {
+         margin: 0;
      }
  }
+
  //Section Title Style
- h1.title_section{
+ h1.title_section {
      float: left;
  }
- h1.title_section::after{
-     content : '';
+
+ h1.title_section::after {
+     content: '';
      display: block;
-     background-color:$main;
-     height:2px;
-     width:80%;
+     background-color: $main;
+     height: 2px;
+     width: 80%;
      margin-left: 5px;
-    
-}
+
+ }
+
+ //buttons
+ .button {
+     background: $main;
+     color: white;
+     transition: all 0.2s ease-in-out;
+     border-radius: 10px;
+     outline: none;
+     cursor: pointer;
+     padding: 5px 30px;
+     font-size: 1rem;
+     margin-right: 1rem;
+     border: 1px solid $main;
+     width: 9rem;
+
+     @media screen and (max-width:800px) {
+         margin: 0;
+         margin-bottom: 1rem;
+     }
+
+     @media screen and (min-height:1300px) {
+         margin: 0;
+         margin-right: 1rem;
+     }
+
+ }
+
+ .button:hover {
+     background: white;
+     color: $main;
+ }
