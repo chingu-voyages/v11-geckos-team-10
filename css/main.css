@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
+
 .about_container {
   width: 90%;
   margin: 0 auto;
   margin-top: 1.5rem;
 }
+
 @media screen and (max-width: 800px) {
   .about_container {
     width: 100%;
   }
 }
+
 .about_container .about_us_container {
   width: 50%;
   margin: 0 auto;
@@ -17,44 +20,52 @@
   align-items: center;
   padding: 1rem;
 }
+
 @media screen and (max-width: 800px) {
   .about_container .about_us_container {
     width: 100%;
     padding: 0;
   }
 }
+
 @media screen and (min-height: 1300px) {
   .about_container .about_us_container {
     width: 100%;
     padding: 0;
   }
 }
+
 .about_container h1.title_section::after {
   width: 50%;
   margin-top: 0.2rem;
   margin-left: 2.5rem;
 }
+
 .about_container .about_paragraph {
   text-align: center;
   margin-bottom: 2rem;
   line-height: 1.5;
 }
+
 @media screen and (max-width: 800px) {
   .about_container .about_paragraph {
     padding: 1rem;
   }
 }
+
 .about_container .btns {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
+
 @media screen and (max-width: 800px) {
   .about_container .btns {
     flex-direction: column;
   }
 }
+
 .about_container .who_are_we_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -62,6 +73,7 @@
   padding: 2rem;
   grid-gap: 9rem;
 }
+
 @media screen and (max-width: 800px) {
   .about_container .who_are_we_container {
     margin: 0;
@@ -70,17 +82,21 @@
     flex-direction: column;
   }
 }
+
 @media screen and (min-height: 1300px) {
   .about_container .who_are_we_container {
     grid-gap: 0;
   }
 }
+
 .about_container .illustration {
   width: 100%;
 }
+
 .about_container p {
   line-height: 2;
 }
+
 @media screen and (max-width: 800px) {
   .about_container .block_container {
     text-align: center;
@@ -90,6 +106,7 @@
 .container_contact {
   width: 100%;
 }
+
 .container_contact .header {
   height: 100px;
   width: 100%;
@@ -97,11 +114,13 @@
   justify-content: center;
   align-items: center;
 }
+
 .container_contact .header h1.title_section::after {
   margin: 0 auto;
   width: 50%;
   margin-top: 5px;
 }
+
 .container_contact .contact_cards_container {
   height: 450px;
   display: flex;
@@ -110,6 +129,7 @@
   flex-wrap: wrap;
   padding: 0 4em;
 }
+
 .container_contact .contact_cards_container .card_contact {
   height: 22em;
   width: 22em;
@@ -117,15 +137,18 @@
   margin: 1em 4em;
   border-radius: 25px;
 }
+
 .container_contact .contact_cards_container .card_contact * {
   color: #fff;
 }
+
 .container_contact .contact_cards_container .card_contact .header {
   height: 180px;
   width: 100%;
   display: flex;
   flex-flow: column wrap;
 }
+
 .container_contact .contact_cards_container .card_contact .header .profile_image {
   height: 90px;
   width: 90px;
@@ -133,28 +156,34 @@
   position: relative;
   overflow: hidden;
 }
+
 .container_contact .contact_cards_container .card_contact .header .profile_image img {
   width: 150%;
 }
+
 .container_contact .contact_cards_container .card_contact .header span.name {
   margin-top: 10px;
   font-weight: 500;
 }
+
 .container_contact .contact_cards_container .card_contact .header span.job {
   font-size: 12px;
   opacity: 0.5;
   font-weight: lighter;
 }
+
 .container_contact .contact_cards_container .card_contact .body {
   height: 100px;
   width: 100%;
   overflow-y: auto;
   text-align: center;
 }
+
 .container_contact .contact_cards_container .card_contact .body p {
   margin: 0 10px;
   font-size: 15px;
 }
+
 .container_contact .contact_cards_container .card_contact .social_media {
   width: 100%;
   height: 60px;
@@ -162,14 +191,17 @@
   justify-content: center;
   align-items: center;
 }
+
 .container_contact .contact_cards_container .card_contact .social_media i:first-child {
   font-size: 20px;
 }
+
 .container_contact .contact_cards_container .card_contact .social_media i {
   cursor: pointer;
   font-size: 24px;
   margin: 0 0.7em;
 }
+
 .container_contact .contact_cards_container .card_contact .social_media i:last-child {
   font-size: 20px;
 }
@@ -179,10 +211,12 @@
     margin-left: 0;
     margin-right: 0;
   }
+
   .container_contact .contact_cards_container .card_contact .body p.about_you {
     font-size: 12px;
   }
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -191,11 +225,17 @@ body {
   box-sizing: border-box;
   color: #414141;
 }
+
 body a {
   text-decoration: none;
   color: inherit;
 }
+
 body ul {
+  margin: 0;
+}
+
+body h1 {
   margin: 0;
 }
 
@@ -225,12 +265,14 @@ h1.title_section::after {
   border: 1px solid #007ae2;
   width: 9rem;
 }
+
 @media screen and (max-width: 800px) {
   .button {
     margin: 0;
     margin-bottom: 1rem;
   }
 }
+
 @media screen and (min-height: 1300px) {
   .button {
     margin: 0;
@@ -241,6 +283,46 @@ h1.title_section::after {
 .button:hover {
   background: white;
   color: #007ae2;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header .header_title {
+  color: #007ae2;
+}
+
+footer {
+  background: #007ae2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem;
+  grid-gap: 4rem;
+  color: white;
+}
+
+footer .social_media_cont {
+  display: flex;
+  align-items: center;
+}
+
+footer .social_media_cont>* {
+  margin-right: 2rem;
+}
+
+footer .social_media_cont .about_us_cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+footer .social_media_cont span {
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

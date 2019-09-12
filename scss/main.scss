@@ -27,6 +27,10 @@
      ul {
          margin: 0;
      }
+
+     h1 {
+         margin: 0;
+     }
  }
 
  //Section Title Style
@@ -73,4 +77,55 @@
  .button:hover {
      background: white;
      color: $main;
+ }
+
+ //header 
+
+ header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem;
+
+     .header_title {
+         color: $main;
+     }
+ }
+
+ //footer 
+ footer {
+     background: $main;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     padding: 2rem;
+     grid-gap: 4rem;
+     color: white;
+
+     .social_media_cont {
+         display: flex;
+         align-items: center;
+
+
+         &>* {
+             margin-right: 2rem;
+         }
+
+         .about_us_cont {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             font-size: 0.9rem;
+         }
+
+         span {
+             font-size: 1.5rem;
+         }
+
+
+     }
+
+
+
+
+
  }
