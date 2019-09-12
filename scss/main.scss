@@ -13,8 +13,10 @@
  body{
      margin: 0;
      padding:0;
+     background-color:#fff;
      font-family: 'Montserrat' , sans-serif;
      box-sizing: border-box;
+     color:$second;
      a{
          text-decoration: none;
          color: inherit;
@@ -23,3 +25,16 @@
          margin:0;
      }
  }
+ //Section Title Style
+ h1.title_section{
+     float: left;
+ }
+ h1.title_section::after{
+     content : '';
+     display: block;
+     background-color:$main;
+     height:2px;
+     width:80%;
+     margin-left: 5px;
+    
+}
