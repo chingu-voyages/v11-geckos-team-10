@@ -1,98 +1,123 @@
-.container_contact{ //contact page parent container
-    width:100%;
-    .header{ //header
-        height:100px;
-        width:100%;
+.container_contact {
+    //contact page parent container
+    width: 100%;
+
+
+    .header {
+        //header
+        height: 100px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        h1.title_section::after{ //override after styles for title to make it in canter
+
+        h1.title_section::after {
+            //override after styles for title to make it in canter
             margin: 0 auto;
-            width:50%;
+            width: 50%;
             margin-top: 5px;
         }
 
     }
-    .contact_cards_container{ //cards container parent 
-        height: 450px;
+
+    .contact_cards_container {
+        //cards container parent 
+        // height: 450px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         padding: 0 4em;
-        .card_contact{ //card contact
-            height:22em;
-            width:22em;
-            background-color:$main;
+
+        .card_contact {
+            //card contact
+            height: 22em;
+            width: 22em;
+            background-color: $main;
             margin: 1em 4em;
             border-radius: 25px;
-            *{
-                color:#fff;
+
+            * {
+                color: #fff;
             }
-            .header{
-                height:180px;
-                width:100%;
+
+            .header {
+                height: 180px;
+                width: 100%;
                 display: flex;
                 flex-flow: column wrap;
-                .profile_image{
-                    height:90px;
-                    width:90px;
+
+                .profile_image {
+                    height: 90px;
+                    width: 90px;
                     border-radius: 50%;
                     position: relative;
                     overflow: hidden;
-                    img{
+
+                    img {
                         width: 150%;
                     }
                 }
-                span.name{
+
+                span.name {
                     margin-top: 10px;
                     font-weight: 500;
                 }
-                span.job{
-                    font-size:12px;
+
+                span.job {
+                    font-size: 12px;
                     opacity: .5;
                     font-weight: lighter;
                 }
             }
-            .body{
+
+            .body {
                 height: 100px;
-                width:100%;
-                overflow-y:auto;
+                width: 100%;
+                overflow-y: auto;
                 text-align: center;
-                p{
-                    margin:0 10px;
-                    font-size:15px;
+
+                p {
+                    margin: 0 10px;
+                    font-size: 15px;
                 }
             }
-            .social_media{
-                width:100%;
-                height:60px;
+
+            .social_media {
+                width: 100%;
+                height: 60px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                i:first-child{
-                    font-size:20px;
+
+                i:first-child {
+                    font-size: 20px;
                 }
-                i{
+
+                i {
                     cursor: pointer;
-                    font-size:24px;
+                    font-size: 24px;
                     margin: 0 .7em;
                 }
-                i:last-child{ //decrease size for twitter icon
-                    font-size:20px;
+
+                i:last-child {
+                    //decrease size for twitter icon
+                    font-size: 20px;
                 }
             }
         }
     }
 }
-@media screen and (max-width:596px){
-    .container_contact{
-        .contact_cards_container{
-            .card_contact{
-                margin-left:0;
-                margin-right:0;
-                .body p.about_you{
-                    font-size:12px;
+
+@media screen and (max-width:596px) {
+    .container_contact {
+        .contact_cards_container {
+            .card_contact {
+                margin-left: 0;
+                margin-right: 0;
+
+                .body p.about_you {
+                    font-size: 12px;
                 }
             }
         }

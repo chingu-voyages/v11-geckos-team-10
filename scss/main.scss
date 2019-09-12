@@ -101,6 +101,10 @@
      grid-gap: 4rem;
      color: white;
 
+     @media screen and (max-width:800px) {
+         grid-gap: 0rem;
+     }
+
      .social_media_cont {
          display: flex;
          align-items: center;
