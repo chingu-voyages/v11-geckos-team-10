@@ -24,18 +24,30 @@
          color: inherit;
      }
 
+     li {
+         list-style: none;
+     }
+
      ul {
          margin: 0;
+         padding: 0;
      }
 
      h1 {
          margin: 0;
+         padding: 0;
      }
+ }
+
+ p {
+     margin: 0.4rem;
  }
 
  //Section Title Style
  h1.title_section {
      float: left;
+     font-size: 1.5rem;
+
  }
 
  h1.title_section::after {
@@ -86,6 +98,7 @@
      justify-content: space-between;
      align-items: center;
      padding: 1rem;
+     padding-bottom: 0;
 
      .header_title {
          color: $main;
@@ -124,12 +137,131 @@
          span {
              font-size: 1.5rem;
          }
+     }
+ }
 
+ //burger menu style
+ .hamburger {
+     width: 50px;
+     height: 50px;
+     background: transparent;
+     border: none;
+     cursor: pointer;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: flex-start;
+     align-items: center;
+     z-index: 99;
 
+     &:focus {
+         outline: none;
      }
 
+     &:hover {
+         transition: all 0.2s ease-in-out;
 
+         //each line represents element of the burger menu
+         .line {
+             &:nth-child(1) {
+                 width: 100%;
+             }
 
+             &:nth-child(2) {
+                 width: 100%;
+             }
 
+             &:nth-child(3) {
+                 width: 100%;
+             }
+         }
+     }
 
+     .line {
+         transition: all 0.2s ease-in-out;
+         height: 5px;
+         margin: 5px 0;
+         border-radius: 5px;
+         background: $second;
+
+         &:nth-child(1) {
+             width: 100%;
+         }
+
+         &:nth-child(2) {
+             width: 80%;
+         }
+
+         &:nth-child(3) {
+             width: 60%;
+         }
+     }
+ }
+
+ // the close button for the nav 
+ .closeNavButton {
+     font-size: 3rem;
+     cursor: pointer;
+     color: #fff;
+     position: absolute;
+     top: 0;
+     right: 1rem;
+
+     &:hover {
+         color: $main;
+     }
+ }
+
+ // container of the menu
+ nav {
+     opacity: 0;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     transform: translateX(120px);
+     z-index: 99;
+     background: $second;
+     transition: all 0.3s ease-in-out;
+
+     // this class shows the nav when clicking the burger button  
+     &.active {
+         position: fixed;
+         transform: translateX(0px);
+         right: 0;
+         opacity: 0.9;
+         width: 15%;
+
+         @media (max-width: 700px) {
+             width: 100%;
+         }
+
+         ul {
+             display: flex;
+         }
+
+         li {
+             padding-bottom: 1rem;
+             color: white;
+         }
+     }
+
+     ul {
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: inherit;
+         display: none;
+
+         li {
+             text-decoration: none;
+
+             a {
+                 font-size: 1.2rem;
+                 transition: color 0.3s ease-in-out;
+
+                 &:hover {
+                     color: $main;
+                 }
+             }
+         }
+     }
  }
