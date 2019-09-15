@@ -1,5 +1,6 @@
 .view_lyrics{
      color:#fff;
+     //Header Start
     .header{
         //height:400px;
         width:100%;
@@ -69,6 +70,16 @@
                     cursor: pointer;
                 }
             }
+        }
+    }
+    //header End
+    .content_lyrics{
+        width:97%;
+        margin:0 auto;
+        padding: 2em 3em;
+        p{
+            color:$second;
+            max-width:450px;
         }
     }
 }
