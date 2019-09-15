@@ -12,14 +12,16 @@
 
  //Global styles
  body {
-     *{
-        box-sizing: border-box;
+     * {
+         box-sizing: border-box;
 
      }
+
      margin: 0;
      padding: 0;
      background-color: #fff;
-     font-family: 'Montserrat', sans-serif;
+     font-family: 'Montserrat',
+     sans-serif;
      box-sizing: border-box;
      color: $second;
 
@@ -111,7 +113,7 @@
 
  //footer 
  footer {
-     background: $main;
+     background: #394667;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
      padding: 2rem;

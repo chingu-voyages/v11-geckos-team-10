@@ -97,6 +97,21 @@
   }
 }
 
+body h1.title_section {
+  float: none;
+  padding: 2rem;
+}
+@media (max-width: 800px) {
+  body h1.title_section {
+    padding: 0;
+    padding-top: 2rem;
+    padding-left: 1rem;
+  }
+}
+body h1.title_section::after {
+  width: 5%;
+}
+
 .home_header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -125,6 +140,79 @@
   .home_header .right_block {
     align-items: center;
     text-align: center;
+  }
+}
+
+.popular_songs_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 0 auto;
+  width: 80%;
+  grid-gap: 5rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 800px) {
+  .popular_songs_container {
+    grid-gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.popular_songs_container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 8px -6px #a19fa1;
+  -moz-box-shadow: 10px 10px 8px -6px #a19fa1;
+  box-shadow: 10px 10px 8px -6px #a19fa1;
+}
+.popular_songs_container .music_title {
+  font-weight: bold;
+}
+.popular_songs_container img {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.popular_songs_container .button {
+  margin: 0;
+  width: 40%;
+  padding: 0.3rem 1rem;
+  margin: 0.4rem 0;
+}
+
+.music_news_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem;
+  grid-gap: 1rem;
+}
+.music_news_container .illustration {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+.music_news_container .button {
+  margin: 0;
+  width: fit-content;
+  padding: 0.3rem 1rem;
+  margin: 0.4rem 0;
+}
+@media screen and (max-width: 800px) {
+  .music_news_container {
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-height: 1300px) {
+  .music_news_container {
+    grid-gap: 0;
   }
 }
 
@@ -414,7 +502,7 @@ header .header_title {
 }
 
 footer {
-  background: #007ae2;
+  background: #394667;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 2rem;
