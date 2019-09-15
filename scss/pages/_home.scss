@@ -11,7 +11,7 @@
 body {
     h1.title_section {
         float: none;
-        padding: 2rem;
+        padding-left: 1rem;
 
         @media (max-width: 800px) {
             padding: 0;
@@ -63,22 +63,50 @@ body {
 //section 1 styles
 
 .popular_songs_container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    --webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    // white-space: nowrap;
+    flex-wrap: nowrap;
+    display: flex;
+
     margin: 0 auto;
     width: 80%;
-    grid-gap: 5rem;
+
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
 
+    &::-webkit-scrollbar-thumb {
+        background-color: #161f31;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(51, 43, 43, 0.3);
+    }
+
+    &::-webkit-scrollbar {
+        width: 1em;
+
+    }
+
+
     @media (max-width: 800px) {
-        grid-gap: 1rem;
+
         margin-top: 1rem;
         margin-bottom: 1rem;
+
+        &::-webkit-scrollbar {
+            display: none;
+
+        }
     }
 
     .card {
+        width: 250px;
+        box-sizing: border-box;
+        margin: 1.5rem;
+        flex: 0 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -101,7 +129,7 @@ body {
 
     .button {
         margin: 0;
-        width: 40%;
+        width: fit-content;
         padding: 0.3rem 1rem;
         margin: 0.4rem 0;
     }
@@ -109,7 +137,20 @@ body {
 
 }
 
+// .popular_songs_container::-webkit-scrollbar {
+//     width: 1em;
+//     display: none;
 
+// }
+
+// .popular_songs_container::-webkit-scrollbar-track {
+//     -webkit-box-shadow: inset 0 0 6px rgba(51, 43, 43, 0.3);
+// }
+
+// .popular_songs_container:-webkit-scrollbar-thumb {
+//     background-color: #d0d0d0;
+//     outline: 1px solid slategrey;
+// }
 
 
 .music_news_container {

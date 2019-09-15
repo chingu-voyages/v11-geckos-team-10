@@ -99,7 +99,7 @@
 
 body h1.title_section {
   float: none;
-  padding: 2rem;
+  padding-left: 1rem;
 }
 @media (max-width: 800px) {
   body h1.title_section {
@@ -144,23 +144,40 @@ body h1.title_section::after {
 }
 
 .popular_songs_container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  --webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  display: flex;
   margin: 0 auto;
   width: 80%;
-  grid-gap: 5rem;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.popular_songs_container::-webkit-scrollbar-thumb {
+  background-color: #161f31;
+}
+.popular_songs_container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(51, 43, 43, 0.3);
+}
+.popular_songs_container::-webkit-scrollbar {
+  width: 1em;
+}
 @media (max-width: 800px) {
   .popular_songs_container {
-    grid-gap: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+  .popular_songs_container::-webkit-scrollbar {
+    display: none;
+  }
 }
 .popular_songs_container .card {
+  width: 250px;
+  box-sizing: border-box;
+  margin: 1.5rem;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,7 +197,7 @@ body h1.title_section::after {
 }
 .popular_songs_container .button {
   margin: 0;
-  width: 40%;
+  width: fit-content;
   padding: 0.3rem 1rem;
   margin: 0.4rem 0;
 }
