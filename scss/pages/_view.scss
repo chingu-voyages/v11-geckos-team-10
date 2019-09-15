@@ -1,0 +1,115 @@
+.view_lyrics{
+     color:#fff;
+    .header{
+        //height:400px;
+        width:100%;
+        padding:0 2em;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        background: rgb(0,122,226);
+        background: linear-gradient(169deg, rgba(0,122,226,1) 0%, rgba(101,179,246,1) 100%);
+        .info{
+            height:300px;
+            width:50%;
+            display: flex;
+            align-items: center;
+            padding: 0 1em;
+            .artwork{
+                border-radius: 25px;
+                max-width: 287px;
+                overflow: hidden;
+                img{
+                    width:100%;
+                }
+            }
+            .about_song{
+                height: 79%;
+                width: 100%;
+                margin-left:20px;
+                .header_about{
+                    height:100px;
+                    width:100%;  
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+                .data{
+                    width:100%;
+                    height:50%;
+                    display: flex;
+                    flex-direction: column;
+                    div:first-child{
+                        margin-top:0;
+                    }
+                    div{
+                        margin: .8em 0;
+                    }
+                }
+            }
+        }
+        .actions{
+            height:100%;
+            width:50%;
+            display: flex;
+            align-items: center;
+            padding: 0 2em;
+            justify-content: flex-end;
+            div{
+                button{
+                    display: block;
+                    border: 0;
+                    background-color:#fff;
+                    font-family: inherit;
+                    color:$second;
+                    padding:.9em 2em;
+                    margin:1em .9em;
+                    border-radius: 2em;
+                    outline:none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:757px){
+    .view_lyrics{
+        .header{
+
+            flex-direction: column;
+            .info{
+                width:100%;
+            }
+            .actions{
+                width:100%;
+                justify-content: center !important;
+            }
+        }
+    }
+}
+@media screen and (max-width:655px){
+    .view_lyrics{ 
+        .header{
+            .about_song{
+                .header_about{
+                    text-align: center;
+                }
+                .data {
+                    text-align: center;
+                }
+            }
+            padding: 1.5em 0;
+            .info{
+                height: auto;
+                flex-direction: column;
+            }
+            .actions{
+                div{
+                    button{
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}

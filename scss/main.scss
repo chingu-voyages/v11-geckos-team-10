@@ -1,5 +1,5 @@
  //vars
- @import './abstract//variables.scss';
+ @import './abstract/variables.scss';
 
  //pages
  @import './pages/about.scss';
@@ -12,6 +12,10 @@
 
  //Global styles
  body {
+     *{
+        box-sizing: border-box;
+
+     }
      margin: 0;
      padding: 0;
      background-color: #fff;
