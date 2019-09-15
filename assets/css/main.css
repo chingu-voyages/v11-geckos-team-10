@@ -383,6 +383,15 @@ body h1.title_section::after {
   outline: none;
   cursor: pointer;
 }
+.view_lyrics .content_lyrics {
+  width: 97%;
+  margin: 0 auto;
+  padding: 2em 3em;
+}
+.view_lyrics .content_lyrics p {
+  color: #414141;
+  max-width: 450px;
+}
 
 @media screen and (max-width: 757px) {
   .view_lyrics .header {

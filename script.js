@@ -15,3 +15,15 @@ closeNavButton.addEventListener('click', () => {
     hamburger.style.display = 'block';
     nav.classList.toggle('active');
 });
+/* Simple usage of arrax local script */
+// const fetcher =  new arrax();
+// let song = null;
+// fetcher.getSongByQuery('lferda' , 'mouka')
+// .then(response =>{
+//     song = response.result.url
+// }).then(()=>{
+//     fetcher.getLyrics(song)
+//     .then(res=>{
+//         console.log(res)
+//     })
+//})

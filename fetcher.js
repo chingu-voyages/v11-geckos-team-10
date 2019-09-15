@@ -1,10 +1,23 @@
-//BETA FETCHER
+//WELCOME TO ARRAX FETCHER 
+/**
+ WE MADE THIS SCRIPT TO MAKE THE FETCH PROCESS MORE EASIER USING THE OOP(OBJECT ORIENTED PROGRAMMING)
+ 
+//AVAILABLE METHODS
+[getSongs] a simple method that gives you search results from genius API
+[getSongsByQuery] another method can help you to get a song by giving it the name of the artist and also the song title 
+[getLyrics]the most important method in this script, this one can help to get the lyrics by just giving it the URL and  parraaaaa yeaah you have the lyrics now
+[Questions]
+*Yo man how i can get the url?
+Simply just use one of our provided methods depending on your usage
+ **/
+
+
 class arrax{
     constructor(){
         this.api_token = `?access_token=ifVJ2NTFj1Zd3QDBhEcXccdzBIi-PMK0-trbe_18bMuh-pfme2CFI0X1WmdX_rWs`;
         this.base_url = `https://api.genius.com`
     }
-    async getSongs(query){
+    async getSongs(query){ //get all the search result
         try{
             const song_name = query;
             const url_search = `${this.base_url}/search${this.api_token}&q=${song_name}`
@@ -17,15 +30,15 @@ class arrax{
             return console.log('not found')
         }
     } 
-    async getSongByQuery(artist_name , song){
+    async getSongByQuery(artist_name , song){ //get specefic song by query required artist name as first param and song title
         const artist = artist_name;
         const song_name = song;
         const url_search = `${this.base_url}/search${this.api_token}&q=${artist} ${song_name}`
-        const response = await fetch(url_search);
+        const response = await fetch(url_search); //Fetch DAta
         const json = await response.json();
-        let arr = json.response.hits;
+        let arr = json.response.hits; //store all the search results on this var
         let valide_song = [];
-        arr.forEach(song =>{
+        arr.forEach(song =>{ //Filter the search reuslt to get the wanted song url
             const title = song.result.full_title;
             const reg_song_name = new RegExp(song_name , 'gi')
             const reg_artist_name = new RegExp(artist , 'gi')
@@ -35,30 +48,15 @@ class arrax{
         })
         return valide_song
     }
-    getLyrics(url){ 
-        axios.defaults.baseURL = 'https://arrax.herokuapp.com';
-        let song = url;
-        axios.post('/lyrics',
-        {
-            data:{
-                url:song 
-            },
+    async getLyrics(url){ //get Lyrics by url
+        try{
+        axios.defaults.baseURL = 'https://arrax.herokuapp.com'; //base api url
+        let song = url; //song  = param
+        const response = await axios.post('/lyrics',{data:{url:song },}) //await until we get the lyrics from api
+        return response.data //then return lyrics
         }
-        
-        )
-        .then(function (response) {
-            console.log(response.data);
-        })
-        .catch(function (error) {
-            console.log(error.message);
-        })
+        catch(err){
+            console.log(err)
+        }
     }
 }
-const arrax1 =  new arrax();
-let song_;
-const song = arrax1.getSongByQuery('ezhel' , 'felaket')
-song.then((res)=>{
-    song_ = res.result.url
-}).then(()=>{
-    arrax1.getLyrics(song_);
-})
