@@ -16,14 +16,16 @@ closeNavButton.addEventListener('click', () => {
     nav.classList.toggle('active');
 });
 /* Simple usage of arrax local script */
-// const fetcher =  new arrax();
-// let song = null;
-// fetcher.getSongByQuery('lferda' , 'mouka')
-// .then(response =>{
-//     song = response.result.url
-// }).then(()=>{
-//     fetcher.getLyrics(song)
-//     .then(res=>{
-//         console.log(res)
-//     })
-//})
+
+const fetcher = new arrax();
+let song = null;
+fetcher.getSongByQuery('russ', 'some time')
+    .then(response => {
+        song = response.result.url
+        console.log(response)
+    }).then(() => {
+        fetcher.getLyrics(song)
+            .then(res => {
+                console.log(res)
+            })
+    })

@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
 
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
         display: none;
     }
 }
@@ -18,7 +18,6 @@ body {
             padding-top: 2rem;
             padding-left: 1rem;
         }
-
     }
 
     h1.title_section::after {
@@ -26,7 +25,7 @@ body {
     }
 }
 
-//home header styling 
+//home header styling
 .home_header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -34,7 +33,7 @@ body {
     grid-gap: 5rem;
     height: 400px;
 
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
         display: flex;
         flex-direction: column;
     }
@@ -52,107 +51,78 @@ body {
         flex-direction: column;
         justify-content: center;
 
-        @media (max-width:600px) {
+        @media (max-width: 600px) {
             align-items: center;
             text-align: center;
         }
     }
-
 }
 
-//section 1 styles
+//section 1 and 3 styles
 
 .popular_songs_container {
     --webkit-overflow-scrolling: touch;
     overflow-x: scroll;
     overflow-y: hidden;
-    // white-space: nowrap;
     flex-wrap: nowrap;
     display: flex;
-
     margin: 0 auto;
-    width: 80%;
-
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+
+    &::-webkit-scrollbar {
+        width: 0.5em;
+        height: 9px;
+    }
 
     &::-webkit-scrollbar-thumb {
         background-color: #161f31;
     }
 
     &::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(51, 43, 43, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #f5f5f5;
     }
-
-    &::-webkit-scrollbar {
-        width: 1em;
-
-    }
-
 
     @media (max-width: 800px) {
-
         margin-top: 1rem;
         margin-bottom: 1rem;
 
         &::-webkit-scrollbar {
             display: none;
-
         }
     }
 
     .card {
-        width: 250px;
+        width: 200px;
         box-sizing: border-box;
-        margin: 1.5rem;
+        margin: 2rem;
         flex: 0 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
-        -webkit-box-shadow: 10px 10px 8px -6px rgba(161, 159, 161, 1);
-        -moz-box-shadow: 10px 10px 8px -6px rgba(161, 159, 161, 1);
-        box-shadow: 10px 10px 8px -6px rgba(161, 159, 161, 1);
+        // border-radius: 10px;
+        // -webkit-box-shadow: 10px 10px 8px -6px rgba(161, 159, 161, 1);
+        // -moz-box-shadow: 10px 10px 8px -6px rgba(161, 159, 161, 1);
+        // box-shadow: 10px 10px 8px -6px rgba(161, 159, 161, 1);
     }
 
     .music_title {
         font-weight: bold;
+        text-transform: uppercase;
+        padding-top: 0.5rem;
     }
 
     img {
         width: 100%;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
+        height: 100%;
+        border-radius: 10px;
     }
-
-    .button {
-        margin: 0;
-        width: fit-content;
-        padding: 0.3rem 1rem;
-        margin: 0.4rem 0;
-    }
-
-
 }
 
-// .popular_songs_container::-webkit-scrollbar {
-//     width: 1em;
-//     display: none;
-
-// }
-
-// .popular_songs_container::-webkit-scrollbar-track {
-//     -webkit-box-shadow: inset 0 0 6px rgba(51, 43, 43, 0.3);
-// }
-
-// .popular_songs_container:-webkit-scrollbar-thumb {
-//     background-color: #d0d0d0;
-//     outline: 1px solid slategrey;
-// }
-
-
+// section 2 styles
 .music_news_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -161,7 +131,7 @@ body {
 
     .illustration {
         width: 100%;
-        height: 300px;
+        height: 100%;
         border-radius: 10px;
     }
 
@@ -170,18 +140,16 @@ body {
         width: fit-content;
         padding: 0.3rem 1rem;
         margin: 0.4rem 0;
-
     }
 
-    @media screen and (max-width:800px) {
-
+    @media screen and (max-width: 800px) {
         margin: 0;
         padding: 1rem;
         display: flex;
         flex-direction: column;
     }
 
-    @media screen and (min-height:1300px) {
+    @media screen and (min-height: 1300px) {
         grid-gap: 0;
     }
 }

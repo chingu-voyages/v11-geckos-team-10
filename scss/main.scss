@@ -108,6 +108,13 @@
 
      .header_title {
          color: $main;
+         position: relative;
+
+         svg {
+             position: absolute;
+             padding-bottom: 5px;
+         }
+
      }
  }
 
