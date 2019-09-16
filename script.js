@@ -17,15 +17,31 @@ closeNavButton.addEventListener('click', () => {
 });
 /* Simple usage of arrax local script */
 
-const fetcher = new arrax();
-let song = null;
-fetcher.getSongByQuery('russ', 'some time')
+// const fetcher = new arrax();
+// let song = null;
+// fetcher.getSongByQuery('russ', 'some time')
+//     .then(response => {
+//         song = response.result.url
+//         console.log(response)
+//     }).then(() => {
+//         fetcher.getLyrics(song)
+//             .then(res => {
+//                 console.log(res)
+//             })
+//     })
+
+fetch("http://api.deezer.com/editorial/0/charts", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": "87dfe9e82amshf1b38b7b8830090p181fe0jsnc80ae8869c22"
+        }
+    })
     .then(response => {
-        song = response.result.url
-        console.log(response)
-    }).then(() => {
-        fetcher.getLyrics(song)
-            .then(res => {
-                console.log(res)
-            })
+        return response.json()
+    }).then(data => {
+        console.log(data)
+    })
+    .catch(err => {
+        console.log(err);
     })
