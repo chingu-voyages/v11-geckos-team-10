@@ -27,3 +27,9 @@ closeNavButton.addEventListener('click', () => {
 //         console.log(res)
 //     })
 //})
+
+/*Simple example to how to get popular songs*/
+// const fetcher =  new arrax();
+// fetcher.getPopularSongs().then(res =>{
+//     console.log(res)
+// })

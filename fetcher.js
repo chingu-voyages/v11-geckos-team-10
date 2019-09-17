@@ -30,6 +30,22 @@ class arrax{
             return console.log('not found')
         }
     } 
+    async getPopularSongs(limit = 10){ // Set Limit To get a specific amount of data,you can leave it empty and get default value
+        try{
+            axios.defaults.baseURL = this.ituntes_base_url;
+            let info = [];
+            const response = await axios.get(`https://itunes.apple.com/us/rss/topsongs/limit=${limit}/json`);
+            const data = response.data.feed.entry;
+            data.forEach(item =>{
+                info.push({'artist' : item['im:artist'].label ,'artwork' : item['im:image'][2].label } )
+            })
+            return info
+        }
+        catch(err){
+            console.error(err)
+        }
+        
+    }
     async getSongByQuery(artist_name , song){ //get specefic song by query required artist name as first param and song title
         const artist = artist_name;
         const song_name = song;
