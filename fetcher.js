@@ -34,7 +34,6 @@ class arrax {
     } 
     async getPopularSongs(limit = 10){ // Set Limit To get a specific amount of data,you can leave it empty and get default value
         try{
-            axios.defaults.baseURL = this.ituntes_base_url;
             let info = [];
             const response = await axios.get(`https://itunes.apple.com/us/rss/topsongs/limit=${limit}/json`);
             const data = response.data.feed.entry;

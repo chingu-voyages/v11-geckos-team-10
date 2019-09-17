@@ -91,11 +91,6 @@
   width: 100%;
   height: 100%;
 }
-@media (max-width: 600px) {
-  .svg {
-    display: none;
-  }
-}
 
 body h1.title_section {
   float: none;
@@ -117,12 +112,13 @@ body h1.title_section::after {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 2rem;
   grid-gap: 5rem;
-  height: 400px;
+  height: 100vh;
 }
 @media (max-width: 600px) {
   .home_header {
     display: flex;
     flex-direction: column;
+    height: unset;
   }
 }
 .home_header h1 {
@@ -159,7 +155,7 @@ body h1.title_section::after {
   height: 9px;
 }
 .popular_songs_container::-webkit-scrollbar-thumb {
-  background-color: #161f31;
+  background-color: #a0a4ac;
 }
 .popular_songs_container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -200,17 +196,55 @@ body h1.title_section::after {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 2rem;
   grid-gap: 1rem;
+  height: 28em;
+  padding-left: 0;
+}
+@media screen and (max-width: 800px) {
+  .music_news_container {
+    height: auto;
+  }
+}
+.music_news_container .image_news {
+  overflow: hidden;
+}
+@media screen and (max-width: 800px) {
+  .music_news_container .image_news {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    margin: 1rem 0;
+  }
 }
 .music_news_container .illustration {
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
 }
 .music_news_container .button {
   margin: 0;
   width: fit-content;
   padding: 0.3rem 1rem;
   margin: 0.4rem 0;
+}
+@media screen and (max-width: 800px) {
+  .music_news_container .button {
+    margin: 1rem auto;
+  }
+}
+.music_news_container .block_paragraph {
+  height: 250px;
+  overflow: hidden;
+}
+@media screen and (max-width: 800px) {
+  .music_news_container .block_paragraph h1 {
+    text-align: center;
+  }
+}
+.music_news_container .block_paragraph p {
+  line-height: 22px;
+}
+@media screen and (max-width: 800px) {
+  .music_news_container .block_paragraph p {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 800px) {
   .music_news_container {
@@ -607,9 +641,6 @@ footer .social_media_cont span {
   top: 0;
   right: 1rem;
 }
-.closeNavButton:hover {
-  color: #007ae2;
-}
 
 nav {
   opacity: 0;
@@ -618,15 +649,15 @@ nav {
   top: 0;
   transform: translateX(120px);
   z-index: 99;
-  background: #414141;
+  background: #007ae2;
   transition: all 0.3s ease-in-out;
 }
 nav.active {
   position: fixed;
   transform: translateX(0px);
   right: 0;
-  opacity: 0.9;
-  width: 15%;
+  opacity: 1;
+  width: 30%;
 }
 @media (max-width: 700px) {
   nav.active {
@@ -637,7 +668,7 @@ nav.active ul {
   display: flex;
 }
 nav.active li {
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   color: white;
 }
 nav ul {
@@ -653,9 +684,6 @@ nav ul li {
 nav ul li a {
   font-size: 1.2rem;
   transition: color 0.3s ease-in-out;
-}
-nav ul li a:hover {
-  color: #007ae2;
 }
 
 /*# sourceMappingURL=main.css.map */

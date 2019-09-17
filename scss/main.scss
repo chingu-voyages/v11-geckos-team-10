@@ -219,9 +219,9 @@
      top: 0;
      right: 1rem;
 
-     &:hover {
-         color: $main;
-     }
+    //  &:hover {
+    //      color: $main;
+    //  }
  }
 
  // container of the menu
@@ -232,7 +232,7 @@
      top: 0;
      transform: translateX(120px);
      z-index: 99;
-     background: $second;
+     background: $main;
      transition: all 0.3s ease-in-out;
 
      // this class shows the nav when clicking the burger button  
@@ -240,8 +240,8 @@
          position: fixed;
          transform: translateX(0px);
          right: 0;
-         opacity: 0.9;
-         width: 15%;
+         opacity: 1;
+         width: 30%;
 
          @media (max-width: 700px) {
              width: 100%;
@@ -252,7 +252,7 @@
          }
 
          li {
-             padding-bottom: 1rem;
+             padding-bottom: 2rem;
              color: white;
          }
      }
@@ -271,9 +271,9 @@
                  font-size: 1.2rem;
                  transition: color 0.3s ease-in-out;
 
-                 &:hover {
-                     color: $main;
-                 }
+                //  &:hover {
+                //      color: $main;
+                //  }
              }
          }
      }
