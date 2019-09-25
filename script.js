@@ -3,6 +3,7 @@ const closeNavButton = document.querySelector('.closeNavButton');
 let hamburger = document.querySelector('.hamburger');
 const popular_songs_continer= document.getElementById('popular_songs');
 const music_news= document.getElementById('music_news');
+const recomanded_songs_container = document.getElementById('recommended_songs');
 const fetcher = new arrax();
 /* Get Popular songs Function*/
 function getPop(){
@@ -45,6 +46,27 @@ async function getNews(){
     $(music_news).append(template)
 }
 getNews()
+
+
+/* Get recommended*/
+async function getReco(){
+    const reply = await fetcher.getRecom();
+    const data = reply.data;
+    data.forEach(song =>{
+        const template = `
+        <div class="card">
+                <img src="${song.Artwork}"
+                    alt="">
+                <div class="music_title">${song.Name}</div>
+                <div class="music_name">${song.Artist}</div>
+            </div>
+        `
+        $(recomanded_songs_container).append(template)
+
+    })
+
+}
+getReco()
 
 function toggleState() {
     nav.classList.toggle('active'); //show the nav

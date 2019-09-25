@@ -29,7 +29,7 @@ class arrax {
         //     month = '0' + month;
         // }
         // const date = yyy + '-' + month + '-' + (day-1);
-        const url = `http://newsapi.org/v2/everything?domains=billboard.com&apiKey=a79879fc5f5a41388fc6766b09d8e851`;
+        const url = `https://newsapi.org/v2/everything?domains=billboard.com&apiKey=a79879fc5f5a41388fc6766b09d8e851`;
         const response = await axios.get(url);
         const data = response.data.articles;
         let info = [];
@@ -74,7 +74,7 @@ class arrax {
     async getPopularSongs(limit = 10) { // Set Limit To get a specific amount of data,you can leave it empty and get default value
         try {
             let info = [];
-            const response = await axios.get(`http://itunes.apple.com/us/rss/topsongs/limit=${limit}/json`);
+            const response = await axios.get(`https://itunes.apple.com/us/rss/topsongs/limit=${limit}/json`);
             const data = response.data.feed.entry;
             data.forEach(item => {
                 info.push({
@@ -106,6 +106,17 @@ class arrax {
             }
         })
         return valide_song
+    }
+    async getRecom(){ //get recommended songs
+        try{
+            const response = await axios.get(`https://recomanded-arrax.herokuapp.com/api/recomanded`);
+            return response
+        }
+        catch(err){
+            console.log(err)
+        }
+    
+    
     }
     async getLyrics(url) { //get Lyrics by url
         try {
