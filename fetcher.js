@@ -17,9 +17,48 @@ class arrax {
         this.api_token = `?access_token=ifVJ2NTFj1Zd3QDBhEcXccdzBIi-PMK0-trbe_18bMuh-pfme2CFI0X1WmdX_rWs`;
         this.base_url = `https://api.genius.com`
     }
-
-
-
+    async getNews() { //get music world news
+        // let today = new Date();
+        // let day = today.getDate();
+        // let month  = today.getMonth() + 1;
+        // let yyy = today.getFullYear();
+        // if (day < 10) {
+        //     day = '0' + day;
+        //   } 
+        //   if (month < 10) {
+        //     month = '0' + month;
+        // }
+        // const date = yyy + '-' + month + '-' + (day-1);
+        const url = `https://newsapi.org/v2/everything?domains=billboard.com&apiKey=a79879fc5f5a41388fc6766b09d8e851`;
+        const response = await axios.get(url);
+        const data = response.data.articles;
+        let info = [];
+        let randomPost = Math.floor(Math.random() * data.length);
+        if (data[randomPost].content === null || data[randomPost].image === null || data[randomPost].title === null) { //filter result to avoide empty results
+            let i = 0;
+            while (i < data.length) {
+                if (data[i].content !== null && data[i].title !== null && data[i].urlToImage !== null) {
+                    info.push({
+                        'content': data[i].content.substring(data[i].content.lastIndexOf(']' + 1), data[i].content.lastIndexOf('[')),
+                        'title': data[i].title,
+                        'url': data[i].url,
+                        'image': data[i].urlToImage
+                    })
+                    i = data.length;
+                }
+                i++;
+            }
+            return info
+        } else {
+            info.push({
+                'content': data[randomPost].content.substring(data[randomPost].content.lastIndexOf(']' + 1), data[randomPost].content.lastIndexOf('[')),
+                'title': data[randomPost].title,
+                'url': data[randomPost].url,
+                'image': data[randomPost].urlToImage
+            })
+            return info
+        }
+    }
     async getSongs(query) { //get all the search result
         try {
             const song_name = query;
@@ -31,21 +70,24 @@ class arrax {
         } catch (err) {
             return console.log('not found')
         }
-    } 
-    async getPopularSongs(limit = 10){ // Set Limit To get a specific amount of data,you can leave it empty and get default value
-        try{
+    }
+    async getPopularSongs(limit = 10) { // Set Limit To get a specific amount of data,you can leave it empty and get default value
+        try {
             let info = [];
             const response = await axios.get(`https://itunes.apple.com/us/rss/topsongs/limit=${limit}/json`);
             const data = response.data.feed.entry;
-            data.forEach(item =>{
-                info.push({'artist' : item['im:artist'].label ,'artwork' : item['im:image'][2].label } )
+            data.forEach(item => {
+                info.push({
+                    'artist': item['im:artist'].label,
+                    'artwork': item['im:image'][2].label,
+                    'song_name': item['im:name'].label
+                })
             })
             return info
-        }
-        catch(err){
+        } catch (err) {
             console.error(err)
         }
-        
+
     }
     async getSongByQuery(artist_name, song) { //get specefic song by query required artist name as first param and song title
         const artist = artist_name;

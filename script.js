@@ -1,6 +1,50 @@
 const nav = document.querySelector('nav');
 const closeNavButton = document.querySelector('.closeNavButton');
 let hamburger = document.querySelector('.hamburger');
+const popular_songs_continer= document.getElementById('popular_songs');
+const music_news= document.getElementById('music_news');
+const fetcher = new arrax();
+/* Get Popular songs Function*/
+function getPop(){
+fetcher.getPopularSongs(50).then(res=>{
+    res.forEach(item =>{
+        const template = 
+        `
+        <div class="card">
+            <img src="${item.artwork}"
+                alt="">
+            <div title="${item.song_name}" class="music_title">${item.song_name.slice(0,13) + '...'}</div>
+            <div title ="${item.artist}" class="music_name">${item.artist.split('&')[0]}</div>
+
+        </div>
+        `
+        $(popular_songs_continer).append(template)
+    })
+})
+}
+getPop()
+
+/*Get News Songs*/
+async function getNews(){
+    const reply = await fetcher.getNews()
+    const template = await `
+    <div class="image_news">
+        <img class="illustration"
+        src="${reply[0].image}"
+        alt="illustration" />
+    </div>
+
+    <div class="block_container">
+        <!-- container for the block beside the illustration -->
+        <h1>${reply[0].title}</h1>
+        <div class="block_paragraph">
+           <p>${reply[0].content}</p>
+        </div>
+        <div class="button"><a target="_blank" href="${reply[0].url}">Read More</a></div>
+    </div>`;
+    $(music_news).append(template)
+}
+getNews()
 
 function toggleState() {
     nav.classList.toggle('active'); //show the nav
@@ -15,24 +59,3 @@ closeNavButton.addEventListener('click', () => {
     hamburger.style.display = 'block';
     nav.classList.toggle('active');
 });
-/* Simple usage of arrax local script */
-
-// const fetcher = new arrax();
-// let song = null;
-// fetcher.getSongByQuery('russ', 'some time')
-//     .then(response => {
-//         song = response.result.url
-//         console.log(response)
-//     }).then(() => {
-//         fetcher.getLyrics(song)
-//             .then(res => {
-//                 console.log(res)
-//             })
-//     })
-//})
-
-/*Simple example to how to get popular songs*/
-// const fetcher =  new arrax();
-// fetcher.getPopularSongs().then(res =>{
-//     console.log(res)
-// })

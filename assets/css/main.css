@@ -206,6 +206,8 @@ body h1.title_section::after {
 }
 .music_news_container .image_news {
   overflow: hidden;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 @media screen and (max-width: 800px) {
   .music_news_container .image_news {
@@ -218,6 +220,11 @@ body h1.title_section::after {
 .music_news_container .illustration {
   width: 100%;
 }
+@media screen and (max-width: 800px) {
+  .music_news_container .illustration {
+    width: 110%;
+  }
+}
 .music_news_container .button {
   margin: 0;
   width: fit-content;
@@ -229,14 +236,23 @@ body h1.title_section::after {
     margin: 1rem auto;
   }
 }
-.music_news_container .block_paragraph {
-  height: 250px;
-  overflow: hidden;
+.music_news_container .block_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 @media screen and (max-width: 800px) {
-  .music_news_container .block_paragraph h1 {
+  .music_news_container .block_container h1 {
     text-align: center;
   }
+}
+@media screen and (min-width: 800px) {
+  .music_news_container .block_container h1 {
+    max-width: 80%;
+  }
+}
+.music_news_container .block_paragraph {
+  overflow: hidden;
 }
 .music_news_container .block_paragraph p {
   line-height: 22px;
@@ -244,6 +260,16 @@ body h1.title_section::after {
 @media screen and (max-width: 800px) {
   .music_news_container .block_paragraph p {
     text-align: center;
+  }
+}
+@media screen and (max-width: 800px) {
+  .music_news_container .block_paragraph p {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 800px) {
+  .music_news_container .block_paragraph p {
+    max-width: 85%;
   }
 }
 @media screen and (max-width: 800px) {
