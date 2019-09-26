@@ -100,8 +100,8 @@ class arrax {
         while(i < arr.length){
             const genius_title = arr[i].result.title;
             const genius_artist_name = arr[i].result.primary_artist.name;
-            const reg_song_name = new RegExp(song_name, 'gsi')
-            const reg_artist_name = new RegExp(artist, 'gsi')
+            const reg_song_name = new RegExp(song_name, 'gi')
+            const reg_artist_name = new RegExp(artist, 'gi')
             if (genius_title.match(reg_song_name) && genius_artist_name.match(reg_artist_name)) {
                 valide_song = arr[i];
                 i = arr.length
