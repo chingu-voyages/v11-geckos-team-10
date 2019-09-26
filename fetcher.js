@@ -10,25 +10,12 @@
 *Yo man how i can get the url?
 Simply just use one of our provided methods depending on your usage
  **/
-
-// https://api.genius.com/search?access_token=ifVJ2NTFj1Zd3QDBhEcXccdzBIi-PMK0-trbe_18bMuh-pfme2CFI0X1WmdX_rWs&q=
 class arrax {
     constructor() {
         this.api_token = `?access_token=ifVJ2NTFj1Zd3QDBhEcXccdzBIi-PMK0-trbe_18bMuh-pfme2CFI0X1WmdX_rWs`;
         this.base_url = `https://api.genius.com`
     }
     async getNews() { //get music world news
-        // let today = new Date();
-        // let day = today.getDate();
-        // let month  = today.getMonth() + 1;
-        // let yyy = today.getFullYear();
-        // if (day < 10) {
-        //     day = '0' + day;
-        //   } 
-        //   if (month < 10) {
-        //     month = '0' + month;
-        // }
-        // const date = yyy + '-' + month + '-' + (day-1);
         const url = `https://newsapi.org/v2/everything?domains=billboard.com&apiKey=a79879fc5f5a41388fc6766b09d8e851`;
         const response = await axios.get(url);
         const data = response.data.articles;
