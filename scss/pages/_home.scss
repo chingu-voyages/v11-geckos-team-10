@@ -84,10 +84,6 @@ body {
     @media (max-width: 800px) {
         margin-top: 1rem;
         margin-bottom: 1rem;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
     }
 
     .card {

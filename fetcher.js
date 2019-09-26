@@ -89,34 +89,49 @@ class arrax {
         }
 
     }
+    async getSongById(id) {
+        try {
+            const url_id = `${this.base_url}/songs/${id}${this.api_token}`
+            const response = await axios.get(url_id)
+            return response
+        } catch (err) {
+            console.log(err)
+        }
+    }
     async getSongByQuery(artist_name, song) { //get specefic song by query required artist name as first param and song title
-        const artist = artist_name;
-        const song_name = song;
+        const artist = artist_name.replace(/\s+/, " ").trim();
+        let song_name = song.replace(/(?!\w|\s)./g, '').trim();
+        if (song_name.includes('feat')) {
+            song_name = song_name.slice(0, song_name.indexOf('feat')).trim()
+        }
         const url_search = `${this.base_url}/search${this.api_token}&q=${artist} ${song_name}`
         const response = await fetch(url_search); //Fetch DAta
         const json = await response.json();
         let arr = json.response.hits; //store all the search results on this var
         let valide_song = [];
-        arr.forEach(song => { //Filter the search reuslt to get the wanted song url
-            const title = song.result.full_title;
-            const reg_song_name = new RegExp(song_name, 'gi')
-            const reg_artist_name = new RegExp(artist, 'gi')
-            if (title.match(reg_song_name) && title.match(reg_artist_name)) {
-                valide_song = song;
+        let i = 0;
+        while(i < arr.length){
+            const genius_title = arr[i].result.title;
+            const genius_artist_name = arr[i].result.primary_artist.name;
+            const reg_song_name = new RegExp(song_name, 'gsi')
+            const reg_artist_name = new RegExp(artist, 'gsi')
+            if (genius_title.match(reg_song_name) && genius_artist_name.match(reg_artist_name)) {
+                valide_song = arr[i];
+                i = arr.length
             }
-        })
+            i++
+        } 
         return valide_song
     }
-    async getRecom(){ //get recommended songs
-        try{
+    async getRecom() { //get recommended songs
+        try {
             const response = await axios.get(`https://recomanded-arrax.herokuapp.com/api/recomanded`);
             return response
-        }
-        catch(err){
+        } catch (err) {
             console.log(err)
         }
-    
-    
+
+
     }
     async getLyrics(url) { //get Lyrics by url
         try {

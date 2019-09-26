@@ -166,9 +166,6 @@ body h1.title_section::after {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .popular_songs_container::-webkit-scrollbar {
-    display: none;
-  }
 }
 .popular_songs_container .card {
   width: 200px;
@@ -405,6 +402,11 @@ body h1.title_section::after {
   max-width: 287px;
   overflow: hidden;
 }
+@media screen and (max-width: 757px) {
+  .view_lyrics .header .info .artwork {
+    max-width: 205px;
+  }
+}
 .view_lyrics .header .info .artwork img {
   width: 100%;
 }
@@ -458,8 +460,11 @@ body h1.title_section::after {
   padding: 2em 3em;
 }
 .view_lyrics .content_lyrics p {
+  line-height: 1.7;
   color: #414141;
-  max-width: 450px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 757px) {
@@ -502,6 +507,54 @@ body {
 }
 body * {
   box-sizing: border-box;
+}
+body .loading_screen {
+  background: #007ae2;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .loading_screen .loader {
+  position: relative;
+}
+body .loading_screen .one {
+  position: absolute;
+  border-radius: 50%;
+  background: #FFFFFF;
+  opacity: 0;
+  animation: loading 1.3s 0.65s infinite;
+  height: 20px;
+  width: 20px;
+}
+body .loading_screen .two {
+  position: absolute;
+  border-radius: 50%;
+  background: #2ecc71;
+  opacity: 0;
+  animation: loading 1.3s infinite;
+  height: 20px;
+  width: 20px;
+}
+@keyframes loading {
+  0% {
+    opacity: 0;
+    transform: scale(0.15);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.15);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  }
 }
 body a {
   text-decoration: none;

@@ -17,6 +17,9 @@
             align-items: center;
             padding: 0 1em;
             .artwork{
+                @media screen and (max-width:757px){
+                 max-width:205px;
+                }
                 border-radius: 25px;
                 max-width: 287px;
                 overflow: hidden;
@@ -78,8 +81,11 @@
         margin:0 auto;
         padding: 2em 3em;
         p{
-            color:$second;
-            max-width:450px;
+            line-height: 1.7;
+            color: $second;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 18px;
         }
     }
 }

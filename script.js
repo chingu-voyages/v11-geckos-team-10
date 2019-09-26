@@ -5,6 +5,10 @@ const popular_songs_continer= document.getElementById('popular_songs');
 const music_news= document.getElementById('music_news');
 const recomanded_songs_container = document.getElementById('recommended_songs');
 const fetcher = new arrax();
+const loading_screen = document.querySelector('.loading_screen')
+
+/* Send to view page */
+
 /* Get Popular songs Function*/
 function getPop(){
 fetcher.getPopularSongs(50).then(res=>{
@@ -14,7 +18,7 @@ fetcher.getPopularSongs(50).then(res=>{
         <div class="card">
             <img src="${item.artwork}"
                 alt="">
-            <div title="${item.song_name}" class="music_title">${item.song_name.slice(0,13) + '...'}</div>
+            <div title="${item.song_name}" class="music_title"><a href="view.html?data=${item.song_name}+${item.artist}">${item.song_name.slice(0,13) + '...'}</a></div>
             <div title ="${item.artist}" class="music_name">${item.artist.split('&')[0]}</div>
 
         </div>
@@ -57,14 +61,14 @@ async function getReco(){
         <div class="card">
                 <img src="${song.Artwork}"
                     alt="">
-                <div class="music_title">${song.Name}</div>
-                <div class="music_name">${song.Artist}</div>
+                <div title="${song.Name}" class="music_title"><a href="view.html?data=${song.Name}+${song.Artist}">${song.Name.slice(0,13) + '...'}</a></div>
+                <div title="${song.Artist}" class="music_name">${song.Artist}</div>
             </div>
         `
         $(recomanded_songs_container).append(template)
 
     })
-
+    loading_screen.style.display = 'none'
 }
 getReco()
 
