@@ -23,10 +23,7 @@ function encode(url) {
     })
     return output[0]
 }
-const {
-    song_name,
-    artist
-} = encode(window.location.href)
+const {song_name, artist} = encode(window.location.href)
 const fetcher_view = new arrax();
 const artwork = document.getElementById('artwork');
 const name = document.getElementById('song_title')
@@ -34,16 +31,19 @@ const artist_name = document.getElementById('artist_name');
 const date = document.getElementById('date_release')
 const song_writter = document.getElementById('song_writter')
 const preview = document.getElementById('preview_youtube');
+const suggested = document.getElementById('suggested');
 async function setInfo(artist, song_name) {
-    try{
+    try {
+        let suggested_songs = []
         const link = await fetcher_view.getSongByQuery(artist, song_name)
         setLyrics(link.result.url)
         const moreInfo = await fetcher_view.getSongById(link.result.id)
+        suggested_songs.push(moreInfo.data.response.song.song_relationships);
         const release_date = moreInfo.data.response.song.release_date;
         const writter = moreInfo.data.response.song.writer_artists[0].name;
         let youtube = moreInfo.data.response.song.media;
-        youtube.forEach(item=>{
-            if(item.provider == 'youtube'){
+        youtube.forEach(item => {
+            if (item.provider == 'youtube') {
                 youtube = item.url
             }
         })
@@ -57,9 +57,35 @@ async function setInfo(artist, song_name) {
         date.textContent = release_date;
         artist_name.textContent = primary_artist
         artwork.setAttribute('src', song_art_image_thumbnail_url)
-        preview.setAttribute('href' ,  youtube)
-    }
-    catch(err){
+        preview.setAttribute('href', youtube)
+
+        let b = 0;
+        while (b < suggested_songs[0].length) {
+            let count = suggested_songs[0][b];
+            if(count.songs.length > 4){
+                console.log(count.songs)
+                suggested_songs= []
+                suggested_songs.push(count.songs)
+                suggested_songs[0].forEach(song=>{
+                    const template_suggested =  `
+                      <div class="card">
+                              <div class="artwork">
+                              <img src="${song.song_art_image_thumbnail_url}"
+                                  alt="">
+                              </div>
+                              <div title="${song.title}" class="music_title"><a href="view.html?data=${song.title}+${song.primary_artist.name}">${song.title.slice(0,13) + '...'}</a></div>
+                              <div title="${song.primary_artist.name}" class="music_name">${song.primary_artist.name}</div>
+                          </div>
+                      `
+                  $(suggested).append(template_suggested)
+              })
+                b = suggested_songs[0].length
+            }
+
+            b++
+        }
+
+    } catch (err) {
         console.log(err)
         swal("Check your internet connection if this error keeps popping up, contact us", "an error occurred while processing your request!", "error", {
             button: "Go Back Home",

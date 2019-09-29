@@ -97,7 +97,7 @@ class arrax {
         let arr = json.response.hits; //store all the search results on this var
         let valide_song = [];
         let i = 0;
-        while(i < arr.length){
+        while (i < arr.length) {
             const genius_title = arr[i].result.title;
             const genius_artist_name = arr[i].result.primary_artist.name;
             const reg_song_name = new RegExp(song_name, 'gi')
@@ -107,7 +107,7 @@ class arrax {
                 i = arr.length
             }
             i++
-        } 
+        }
         return valide_song
     }
     async getRecom() { //get recommended songs
