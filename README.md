@@ -15,8 +15,11 @@ It's about a lyrics app named 'BVOICE', it helps the user to get most popular so
 # API used : 
 
 -Genius Api : https://docs.genius.com/ (Check the docs here)
+
 -Billboard Api : https://rapidapi.com/LDVIN/api/billboard-api (Check the docs here).
+
 -itunes Api : https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/ (Check the docs here).
+
 
 # Production Built
 
