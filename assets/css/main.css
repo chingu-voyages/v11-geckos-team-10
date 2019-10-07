@@ -81,6 +81,11 @@
 .about_container p {
   line-height: 2;
 }
+.about_container .block_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 @media screen and (max-width: 800px) {
   .about_container .block_container {
     text-align: center;
@@ -706,6 +711,7 @@ footer {
 footer .social_media_cont {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 footer .social_media_cont > * {
   margin-right: 2rem;

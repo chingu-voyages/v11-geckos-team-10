@@ -87,7 +87,7 @@ async function setInfo(artist, song_name) {
 
     } catch (err) {
         console.log(err)
-        swal("Check your internet connection if this error keeps popping up, contact us", "an error occurred while processing your request!", "error", {
+        swal("can't handle this request :(", "an error occurred while processing your request!", "error", {
             button: "Go Back Home",
         }).then(()=>{
             window.location.replace('index.html')
