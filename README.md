@@ -21,7 +21,9 @@ It's about a lyrics app named 'BVOICE', it helps the user to get most popular so
 -itunes Api : Popular songs are extracted using this api, https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/ (Check the docs here).
 
 -Arrax Lyrics : it's used to get the music lyrics, https://github.com/Everkers/Arrax/
+
 -Arrax Recommendation : it's used to get recommended songs : https://github.com/Monters-Land/recomanded_arrax
+
 -Dashboard Bvoice : it's used to store data to the arrax recommended database : https://github.com/Monters-Land/Dashboard-bvoice
 
 # Production Built
