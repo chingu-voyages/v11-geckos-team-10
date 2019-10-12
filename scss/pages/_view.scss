@@ -21,10 +21,11 @@
                  max-width:205px;
                 }
                 border-radius: 25px;
-                max-width: 287px;
+                height: 225px;
+                width: 376px;
                 overflow: hidden;
                 img{
-                    width:100%;
+                    object-fit: fill;
                 }
             }
             .about_song{

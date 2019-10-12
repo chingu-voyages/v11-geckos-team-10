@@ -404,7 +404,8 @@ body h1.title_section::after {
 }
 .view_lyrics .header .info .artwork {
   border-radius: 25px;
-  max-width: 287px;
+  height: 225px;
+  width: 376px;
   overflow: hidden;
 }
 @media screen and (max-width: 757px) {
@@ -413,7 +414,7 @@ body h1.title_section::after {
   }
 }
 .view_lyrics .header .info .artwork img {
-  width: 100%;
+  object-fit: fill;
 }
 .view_lyrics .header .info .about_song {
   height: 79%;
@@ -606,10 +607,10 @@ body h1.title_section::after {
 }
 #search main {
   width: 100%;
-  padding: 2em 5em;
   display: flex;
   flex-flow: wrap;
   display: none;
+  justify-content: center;
   box-sizing: border-box;
 }
 #search main .card {

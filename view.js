@@ -86,7 +86,6 @@ async function setInfo(artist, song_name) {
         while (b < suggested_songs[0].length) {
             let count = suggested_songs[0][b];
             if(count.songs.length > 4){
-                console.log(count.songs)
                 suggested_songs= []
                 suggested_songs.push(count.songs)
                 suggested_songs[0].forEach(song=>{
