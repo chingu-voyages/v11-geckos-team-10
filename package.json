@@ -1,0 +1,19 @@
+{
+  "name": "cls",
+  "version": "1.0.0",
+  "description": "Add-project-description-here | Voyage-11 | https://chingu.io/ | Twitter: https://twitter.com/ChinguCollabs",
+  "main": "fetcher.js",
+  "scripts": {
+    "sass": "sass --watch scss/main.scss:assets/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/v11-geckos-team-10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/v11-geckos-team-10/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/v11-geckos-team-10#readme"
+}

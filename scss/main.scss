@@ -6,6 +6,7 @@
  @import './pages/home.scss';
  @import './pages/contact.scss';
  @import './pages/view.scss';
+ @import './pages/search';
 
  //fonts
  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
@@ -158,7 +159,6 @@
      padding-bottom: 0;
 
      .header_title {
-         color: $main;
          position: relative;
 
          svg {

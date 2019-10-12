@@ -182,12 +182,12 @@ body h1.title_section::after {
   justify-content: center;
   align-items: center;
 }
-.popular_songs_container .music_title {
+.popular_songs_container .card .music_title {
   font-weight: bold;
   text-transform: uppercase;
   padding-top: 0.5rem;
 }
-.popular_songs_container img {
+.popular_songs_container .card img {
   width: 100%;
   border-radius: 10px;
 }
@@ -555,6 +555,83 @@ body h1.title_section::after {
     display: inline;
   }
 }
+#search .header {
+  background-color: #007ae2;
+  height: 90.5vh;
+  width: 100%;
+  transition: all ease 500ms;
+}
+#search .header .top {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
+  align-items: center;
+}
+#search .header .top h1 {
+  color: #fff;
+}
+#search .header .main {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#search .header .main form {
+  text-align: center;
+  width: 70%;
+}
+#search .header .main form ::placeholder {
+  color: #222222;
+}
+#search .header .main form input {
+  outline: none;
+  border-radius: 3em;
+  border: 0;
+  padding: 0 3em;
+  width: 80%;
+  height: 50px;
+  font-family: inherit;
+}
+#search .header .main form button {
+  background-color: #fff;
+  outline: none;
+  border: 0;
+  margin-top: 3em;
+  padding: 1em 3em;
+  border-radius: 5em;
+  cursor: pointer;
+  font-family: inherit;
+}
+#search main {
+  width: 100%;
+  padding: 2em 5em;
+  display: flex;
+  flex-flow: wrap;
+  display: none;
+  box-sizing: border-box;
+}
+#search main .card {
+  width: 200px;
+  box-sizing: border-box;
+  margin: 5rem;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#search main .card .music_title {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 0.5rem;
+}
+#search main .card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -687,7 +764,6 @@ header {
   padding-bottom: 0;
 }
 header .header_title {
-  color: #007ae2;
   position: relative;
 }
 header .header_title svg {

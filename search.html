@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search for your favorite song</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+            <a href="/v11-geckos-team-10/index.html">
+                <h1 class="header_title">
+                            <span>B<span style="font-weight:lighter">VOICE</span></span>
+                    </h1>
+                    </a>
+        <button class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
+        <nav>
+            <ul>
+                <div class="closeNavButton">&times;</div>
+                <li><a href="/v11-geckos-team-10">Home</a></li>
+                <li><a href="/v11-geckos-team-10/about.html">About</a></li>
+                <li><a href="/v11-geckos-team-10/contact.html">Contact</a></li>
+                <li><a href="/v11-geckos-team-10/search.html">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="search">
+        <div class="header">
+           <div class="top">
+               <h1>Search for a song!</h1>
+           </div> 
+           <div class="main">
+               <form action="#">
+                    <input id='search_input' type="text" placeholder="Search"><br/>
+                    <button id='search_button'>Search</button>
+               </form>
+           </div>
+        </div>
+        <main id='search_container'>
+            
+        </main>
+    </div>
+
+<script src='fetcher.js'></script>
+<script src="search.js"></script>
+</body>
+</html>
