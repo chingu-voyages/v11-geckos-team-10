@@ -12,7 +12,7 @@ It's about a lyrics app named 'BVOICE', it helps the user to get most popular so
 - CSS / SCSS
 - JavaScript
 
-# API used : 
+# APIs Used : 
 
 -Genius Api : https://docs.genius.com/ (Check the docs here)
 
@@ -26,7 +26,7 @@ It's about a lyrics app named 'BVOICE', it helps the user to get most popular so
 
 -Dashboard Bvoice : it's used to store data to the arrax recommended database : https://github.com/Monters-Land/Dashboard-bvoice
 
-# Production Built
+# Production Build:
 
 https://chingu-voyages.github.io/v11-geckos-team-10/
 
