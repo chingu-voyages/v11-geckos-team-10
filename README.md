@@ -29,7 +29,7 @@ It's about a lyrics app named 'BVOICE', it helps the user to get most popular so
 # Production Build:
 
 https://chingu-voyages.github.io/v11-geckos-team-10/
-
+https://bvoice.netlify.com/
 # Authors
 
 - [@Nadia](https://github.com/LaasriNadia)
