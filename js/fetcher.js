@@ -110,9 +110,7 @@ class arrax {
         }
         return valide_song
     }
-    async get
- 
- m() { //get recommended songs
+    async getRecom() { //get recommended songs
         try {
             const response = await axios.get(`https://bvoice-recommanded.herokuapp.com/api/recomanded`);
             return response
