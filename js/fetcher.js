@@ -122,7 +122,7 @@ class arrax {
     }
     async getLyrics(url) { //get Lyrics by url
         try {
-            axios.defaults.baseURL = 'https://arrax.herokuapp.com'; //base api url
+            axios.defaults.baseURL = 'https://arrax-lyrics.herokuapp.com/'; //base api url
             let song = url; //song  = param
             const response = await axios.post('/lyrics', {
                 data: {
